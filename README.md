@@ -10,5 +10,5 @@ Our software utilizes machine learning-based radiomics analysis of magnetic reso
 - Efficient Workflow: By automating the classification process, our software streamlines workflow for healthcare professionals, saving time and improving patient care.
 
 To start application
-
-Run `uvicorn app:app --reload`
+- Install packages `pip install -r requirements.txt`
+- Run app `uvicorn app:app --reload`
