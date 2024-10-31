@@ -1,5 +1,6 @@
 # brain-tumor-classfication-software
 Brain Tumor Subtype Classification Software - Class Project
+
 Our software utilizes machine learning-based radiomics analysis of magnetic resonance imaging (MRI) scans to accurately classify various brain tumor subtypes.
 
 - Machine Learning-Based Classification: Our software employs advanced machine learning algorithms to analyze MRI scans and classify tumor subtypes with high accuracy.
