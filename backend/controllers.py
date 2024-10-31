@@ -21,11 +21,11 @@ def check_password(encrypted, test: str):
 
 def login(username, password):
 
-    print("i am login from controllers")
-    print({username, password})
-
     user = db['users'].find_one({'name': username})
 
+    print(user)
+
+    print("control.py")
     print(user)
 
     if not user:
@@ -38,6 +38,7 @@ def login(username, password):
 def signup(**user_details):
 
     db['users'].insert_one(user_details)
+
     return True
 
 
@@ -49,8 +50,11 @@ def get_results():
 def register_results(data):
 
     db['results'].insert_one(data)
+
     return True
 
 def delete_patient(email):
+
     result = db['results'].delete_one({'email': email})
+
     return result

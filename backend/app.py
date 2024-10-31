@@ -64,11 +64,9 @@ model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')
 static_dir = os.path.join(os.path.dirname(__file__), '../frontend/assets')
 frontend_dir = os.path.join(os.path.dirname(__file__), '../frontend/pages')
 
-# Mount the static files directory
+# Mount the static and frontend files directories
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
-
-# Mount the frontend directory to serve HTML files
-app.mount("/frontend", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+app.mount("/web", StaticFiles(directory=frontend_dir, html=True), name="frontend")
 
 @app.post("/login")
 async def login_route(data: LoginForm) -> bool:
