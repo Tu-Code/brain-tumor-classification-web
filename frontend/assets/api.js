@@ -8,7 +8,6 @@ async function login(username, password) {
                 'Content-Type': 'application/json'
             }
         });
-        console.log(response)
         return response.data;
     } catch (error) {
         console.error('Error during login:', error);

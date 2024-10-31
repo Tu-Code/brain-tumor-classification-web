@@ -78,6 +78,7 @@
             try {
                 // Call the login function with the input values
                 const loginResponse = await login(username, password);
+                console.log("I am LOGIN page")
                 console.log('Login response:', loginResponse);
 
                 if (loginResponse) {
