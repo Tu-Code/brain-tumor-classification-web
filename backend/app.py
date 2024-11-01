@@ -58,7 +58,7 @@ app.add_middleware(
 )
 
 # Load YOLOv5 model
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', source='local')
+model = torch.load('opt/ml/model/code/', 'custom', path='best.pt', source='local')
 
 static_dir = os.path.join(os.path.dirname(__file__), '../frontend/assets')
 frontend_dir = os.path.join(os.path.dirname(__file__), '../frontend/pages')
