@@ -12,3 +12,6 @@ Our software utilizes machine learning-based radiomics analysis of magnetic reso
 To start application
 - Install packages `pip install -r requirements.txt`
 - Run app `uvicorn app:app --reload`
+
+Web access
+- [Brain Tumor Classifier](https://brain-tumor-classification-web-1.onrender.com/web/login.html)
