@@ -4,7 +4,7 @@
   "description": "Brain Tumor Subtype Classification Software Our software utilizes machine learning-based radiomics analysis of magnetic resonance imaging (MRI) scans to accurately classify various brain tumor subtypes.",
   "main": "frontend/assets/api.js",
   "scripts": {
-    "start": "uvicorn backend.app:app --reload",
+    "start": "uvicorn backend.app:app --host 0.0.0.0 --port $PORT",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,5 +1,5 @@
 import io
-import numpy as np
+import uvicorn
 from fastapi import FastAPI, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field, ValidationError 
@@ -17,7 +17,6 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse
 
 # Load environment variables from .env file
 load_dotenv()
@@ -67,6 +66,10 @@ frontend_dir = os.path.join(os.path.dirname(__file__), '../frontend/pages')
 # Mount the static and frontend files directories
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 app.mount("/web", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 @app.post("/login")
 async def login_route(data: LoginForm) -> bool:
