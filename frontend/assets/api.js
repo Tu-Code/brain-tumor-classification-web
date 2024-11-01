@@ -1,4 +1,4 @@
-const baseURL = "http://127.0.0.1:10000/"
+const baseURL = "https://brain-tumor-classification-web-1.onrender.com/"
 
 // Function for login
 async function login(username, password) {
