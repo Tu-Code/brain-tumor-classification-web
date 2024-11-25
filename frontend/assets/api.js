@@ -1,4 +1,4 @@
-const baseURL = "https://brain-tumor-classification-web-1.onrender.com/"
+const baseURL = "http://127.0.0.1:8000/"
 
 // Function for login
 async function login(username, password) {
@@ -14,6 +14,7 @@ async function login(username, password) {
         throw error;
     }
 }
+
 // Function for signup
 async function signup(name, email, password) {
     try {
@@ -28,7 +29,9 @@ async function signup(name, email, password) {
 // Function to get results
 async function getResults() {
     try {
-        const response = await axios.get(`${baseURL}results`);
+        const response = await axios.get(`${baseURL}results`, {
+            withCredentials: true
+        });
         return response.data;
     } catch (error) {
         console.error('Error getting results:', error);
@@ -39,7 +42,9 @@ async function getResults() {
 // Function to register results
 async function registerResults(patientData) {
     try {
-        const response = await axios.post(`${baseURL}results`, patientData);
+        const response = await axios.post(`${baseURL}results`, patientData, {
+            withCredentials: true
+        });
         return response.data;
     } catch (error) {
         console.error('Error registering results:', error);
@@ -57,6 +62,7 @@ async function predict(file) {
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
+            withCredentials: true
         });
         return response.data;
     } catch (error) {
@@ -68,7 +74,10 @@ async function predict(file) {
 // Function to delete a patient
 async function deletePatient(email) {
     try {
-        const response = await axios.delete(`${baseURL}patients/${email}`);
+        const response = await axios.delete(`${baseURL}patients/${email}`, {
+            withCredentials: true
+        });
+
         if (response.status === 200) {
             alert('Patient deleted successfully');
             window.location.reload();

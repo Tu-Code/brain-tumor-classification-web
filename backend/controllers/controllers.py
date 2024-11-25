@@ -23,11 +23,6 @@ def login(username, password):
 
     user = db['users'].find_one({'name': username})
 
-    print(user)
-
-    print("control.py")
-    print(user)
-
     if not user:
 
         return False
@@ -42,9 +37,11 @@ def signup(**user_details):
     return True
 
 
-def get_results():
+def get_results(user_id):
+    print("I am get results")
+    print(user_id)
 
-    return list(db['results'].find({}, {'_id': 0}))
+    return list(db['results'].find({'user_id': user_id}, {'_id': 0}))
 
 
 def register_results(data):

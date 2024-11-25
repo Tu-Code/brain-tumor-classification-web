@@ -218,6 +218,7 @@
         document.querySelector('#logoutBtn').addEventListener('click', function (e) {
             e.preventDefault();
             localStorage.removeItem('username');
+            localStorage.removeItem('userId');
             window.location.href = './login.html';
         });
 
