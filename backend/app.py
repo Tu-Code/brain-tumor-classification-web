@@ -48,7 +48,7 @@ app.add_middleware(
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 # Load YOLOv5 model
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt', source='local')
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='best.pt')
 
 static_dir = os.path.join(os.path.dirname(__file__), '../frontend/assets')
 frontend_dir = os.path.join(os.path.dirname(__file__), '../frontend/pages')
