@@ -1,4 +1,6 @@
-const baseURL = "http://127.0.0.1:8000/"
+const baseURL = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost'
+  ? "http://127.0.0.1:8000/"  // Local development
+  : "https://brain-tumor-classification-web-1.onrender.com/";  // Production development
 
 // Function for login
 async function login(username, password) {
